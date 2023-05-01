@@ -1,0 +1,2542 @@
+                                                      Assignment-1
+1. Write a Java Program to Print “HELLO JAVA”.
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+	}
+}
+
+2. Write a Java Program to add two numbers by declaring variables value.
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=5,b=2;
+	    int c=a+b;
+		System.out.println("The required sum is:"+c);
+	}
+}
+
+3. Write a Java Program to calculate factorial value of a declared variable. 
+public class Main
+{
+	public static void main(String[] args) {
+	      int i,fact=1;  
+          int number=5;   
+          for(i=1;i<=number;i++){    
+          fact=fact*i;    
+        }    
+       System.out.println("Factorial of "+number+" is: "+fact);    
+	}
+}
+
+4. Write a Java Program to calculate factorial value of a declared variable by creating
+separate method for factorial segment. 
+public class Main
+{
+ static int factorial(int n){    
+  if (n == 0)    
+    return 1;    
+  else    
+    return(n * factorial(n-1));    
+ }    
+ public static void main(String args[]){  
+  int i,fact=1;  
+  int number=4;   
+  fact = factorial(number);   
+  System.out.println("Factorial of "+number+" is: "+fact);     
+	}
+}
+
+5. Write a Java Program to calculate factorial value of a declared variable by creating
+separate class and method for factorial segment. 
+public class Factorial {
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int num = 5;
+        int fact = Factorial.factorial(num);
+        System.out.println("Factorial of " + num + " is: " + fact);
+    }
+}
+
+6. Write a Java Program to calculate factorial value of a variable by taking input from
+command line. 
+public class Factorial {
+    public static void main(String[] args) {
+        if(args.length == 0) {
+            System.out.println("No input provided.");
+            return;
+        }
+        
+        int num = Integer.parseInt(args[0]);
+        
+        int fact = 1;
+        for(int i=1; i<=num; i++) {
+            fact *= i;
+        }
+        
+        System.out.println("Factorial of " + num + " is: " + fact);
+    }
+}
+
+7. Write a Java Program to display whether a number is odd or even 
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+        if (n%2!=0)
+        System.out.println("Odd");
+        else
+        System.out.println("Even");
+    }
+}
+
+8. Write a Java program to find maximum of three numbers.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = input.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = input.nextInt();
+
+        System.out.print("Enter third number: ");
+        int num3 = input.nextInt();
+
+        int max = num1;
+
+        if (num2 > max) {
+            max = num2;
+        }
+
+        if (num3 > max) {
+            max = num3;
+        }
+
+        System.out.println("The maximum of the three numbers is: " + max);
+    }
+}
+
+9. Write a Java program to swap two numbers. 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = input.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = input.nextInt();
+        System.out.println("The numbers before swap: " + num1+" " +"and"+" "+ num2);
+
+        num1=num1^num2;
+        num2=num1^num2;
+        num1=num1^num2;
+ 
+        System.out.println("The numbers after swap: " + num1+" " +"and"+" "+ num2);
+    }
+}
+
+10. Write a Java program to check whether a year is leap year or not
+import java.util.Scanner;
+
+public class LeapYear {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = input.nextInt();
+
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+            System.out.println(year + " is a leap year");
+        } else {
+            System.out.println(year + " is not a leap year");
+        }
+    }
+}
+
+11. Write a Java program for following grading system.
+Note: Percentage>=90% : Grade A
+Percentage>=80% : Grade B
+Percentage>=70% : Grade C
+Percentage>=60% : Grade D
+Percentage>=40% : Grade E
+Percentage<40% : Grade F
+import java.util.Scanner;
+
+public class GradingSystem {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the percentage: ");
+        double percentage = input.nextDouble();
+        input.close();
+        char grade;
+        if (percentage >= 90) {
+            grade = 'A';
+        } else if (percentage >= 80) {
+            grade = 'B';
+        } else if (percentage >= 70) {
+            grade = 'C';
+        } else if (percentage >= 60) {
+            grade = 'D';
+        } else if (percentage >= 40) {
+            grade = 'E';
+        } else {
+            grade = 'F';
+        }
+        System.out.println("Grade: " + grade);
+    }
+}
+
+12. Write a Java program to check whether a number is divisible by 5 or not. 
+import java.util.Scanner;
+
+public class DivisibleBy5 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+
+        if (num % 5 == 0) {
+            System.out.println(num + " is divisible by 5.");
+        } else {
+            System.out.println(num + " is not divisible by 5.");
+        }
+    }
+}
+
+                                         Assignment-2
+1. Write a java program to create a simple array and access array element. 
+public class SimpleArrayExample {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        System.out.println("The second element of the array is " + numbers[1]);
+    }
+}
+
+2. Write a java program to create 2D array and access the array element. 
+public class TwoDArrayExample {
+   public static void main(String[] args) {
+      // Creating a 2D array
+      int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+      
+      // Accessing the elements of the array
+      for (int i = 0; i < arr.length; i++) {
+         for (int j = 0; j < arr[i].length; j++) {
+            System.out.print(arr[i][j] + " ");
+         }
+         System.out.println();
+      }
+   }
+}
+
+3. Write a Java program to find the sum of even numbers in an integer array. 
+public class SumOfEvenNumbers {
+    public static void main(String[] args) {
+        int[] arr = {2, 5, 6, 8, 9, 10, 12};
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                sum += arr[i];
+            }
+        }
+
+        System.out.println("Sum of even numbers in the array is: " + sum);
+    }
+}
+
+4. Write a Java program to calculate Sum of two 2-dimensional arrays. 
+import java.util.Arrays;
+
+public class SumOf2DArrays {
+    public static void main(String[] args) {
+        int[][] arr1 = {{1, 2}, {3, 4}};
+        int[][] arr2 = {{5, 6}, {7, 8}};
+        
+        int[][] sum = new int[arr1.length][arr1[0].length];
+        
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr1[0].length; j++) {
+                sum[i][j] = arr1[i][j] + arr2[i][j];
+            }
+        }
+        
+        System.out.println("Array 1: " + Arrays.deepToString(arr1));
+        System.out.println("Array 2: " + Arrays.deepToString(arr2));
+        System.out.println("Sum: " + Arrays.deepToString(sum));
+    }
+}
+
+5. Write a Java program to find the sum of diagonal elements in a 2D array. 
+import java.util.Scanner;
+
+public class DiagonalSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int rows, cols, sum = 0;
+
+        System.out.println("Enter the number of rows in the 2D array:");
+        rows = sc.nextInt();
+        System.out.println("Enter the number of columns in the 2D array:");
+        cols = sc.nextInt();
+
+        int[][] arr = new int[rows][cols];
+
+        System.out.println("Enter the elements of the 2D array:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        // Calculate sum of diagonal elements
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (i == j) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+
+        System.out.println("Sum of diagonal elements in the 2D array: " + sum);
+    }
+}
+
+6. Write a Java program to multiply two matrices. 
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of rows of first matrix: ");
+        int rows1 = sc.nextInt();
+        System.out.print("Enter number of columns of first matrix: ");
+        int cols1 = sc.nextInt();
+        System.out.print("Enter number of rows of second matrix: ");
+        int rows2 = sc.nextInt();
+        System.out.print("Enter number of columns of second matrix: ");
+        int cols2 = sc.nextInt();
+
+        if (cols1 != rows2) {
+            System.out.println("Matrix multiplication not possible.");
+            return;
+        }
+
+        int[][] matrix1 = new int[rows1][cols1];
+        int[][] matrix2 = new int[rows2][cols2];
+        int[][] result = new int[rows1][cols2];
+
+        System.out.println("Enter elements of first matrix: ");
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols1; j++) {
+                matrix1[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter elements of second matrix: ");
+        for (int i = 0; i < rows2; i++) {
+            for (int j = 0; j < cols2; j++) {
+                matrix2[i][j] = sc.nextInt();
+            }
+        }
+
+        // matrix multiplication
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                for (int k = 0; k < cols1; k++) {
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+
+        System.out.println("Resultant matrix: ");
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+7. Implementation of default, no argument Constructor. 
+class Student {
+    String name;
+    public void Student() {
+        System.out.println("The name of the student is:"+this.name);
+    }
+    Student(){
+        System.out.println("Constructor called-Joy Mohunbagan!!!"); 
+    }
+}
+    public class Main{
+    public static void main(String[] args) {
+        
+        Student s=new Student();
+        s.name="Modonda";
+        s.Student();
+    }
+}
+
+8. Implementation of parameterized constructor
+class Student {
+    String name;
+    public void Student() {
+        System.out.println("The name of the student is:"+this.name);
+    }
+    Student(String name){
+        this.name=name; 
+    }
+}
+    public class Main{
+    public static void main(String[] args) {
+        
+        Student s=new Student("Modonda");
+        s.Student();
+    }
+}
+
+9. Implementation of returning the value from the caller method. 
+public class Example {
+    public static int add(int a, int b) {
+        int sum = a + b;
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int num1 = 5;
+        int num2 = 10;
+        int result = add(num1, num2);
+        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + result);
+    }
+}
+
+10. Implementation of call by value and call by reference. 
+public class CallByValueAndReference {
+    
+    public static void main(String[] args) {
+        int x = 10;
+        int[] arr = {1, 2, 3};
+        
+        // call by value
+        System.out.println("Before calling incrementByValue method: x = " + x);
+        incrementByValue(x);
+        System.out.println("After calling incrementByValue method: x = " + x);
+        
+        // call by reference
+        System.out.println("Before calling incrementByReference method: arr[1] = " + arr[1]);
+        incrementByReference(arr, 1);
+        System.out.println("After calling incrementByReference method: arr[1] = " + arr[1]);
+    }
+    
+    public static void incrementByValue(int x) {
+        x++;
+        System.out.println("Inside incrementByValue method: x = " + x);
+    }
+    
+    public static void incrementByReference(int[] arr, int index) {
+        arr[index]++;
+        System.out.println("Inside incrementByReference method: arr[" + index + "] = " + arr[index]);
+    }
+}
+
+                                  Assignment-3
+1. Write a java program to implement BufferedReader class
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class BufferedReaderExample {
+    public static void main(String[] args) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = "";
+        System.out.println("Enter a string: ");
+        try {
+            input = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("The entered string is: " + input);
+    }
+}
+
+2. Write a java program to take input from keyboard using Scanner class. 
+import java.util.Scanner;
+
+public class KeyboardInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        System.out.println("Your name is " + name + " and you are " + age + " years old.");
+
+        scanner.close();
+    }
+}
+
+3. Write a Java program to reverse a number. 
+import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number to reverse: ");
+        int number = scanner.nextInt();
+
+        int reverse = 0;
+
+        while (number != 0) {
+            int digit = number % 10;
+            reverse = reverse * 10 + digit;
+            number /= 10;
+        }
+
+        System.out.println("The reverse of the number is: " + reverse);
+    }
+}
+
+4. Write a Java program to check whether a number is palindrome or not
+import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int reversedNum = 0, remainder, originalNum;
+
+        originalNum = num;
+
+        // reversed the number
+        while (num != 0) {
+            remainder = num % 10;
+            reversedNum = reversedNum * 10 + remainder;
+            num /= 10;
+        }
+
+        if (originalNum == reversedNum) {
+            System.out.println(originalNum + " is a palindrome number.");
+        } else {
+            System.out.println(originalNum + " is not a palindrome number.");
+        }
+    }
+}
+
+5. Write a Java program to check whether a number is prime or not.
+import java.util.Scanner;
+
+public class PrimeNumberChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number to check if it is prime or not: ");
+        int number = scanner.nextInt();
+        
+        boolean isPrime = true;
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        
+        if (isPrime) {
+            System.out.println(number + " is a prime number.");
+        } else {
+            System.out.println(number + " is not a prime number.");
+        }
+    }
+}
+
+6. Write a Java program to convert a Binary Number to Decimal and Decimal to Binary. 
+import java.util.Scanner;
+
+public class BinaryDecimalConverter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // convert binary to decimal
+        System.out.print("Enter a binary number: ");
+        String binaryString = sc.nextLine();
+        int decimal = Integer.parseInt(binaryString, 2);
+        System.out.println("Decimal equivalent of " + binaryString + " is " + decimal);
+
+        // convert decimal to binary
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = sc.nextInt();
+        String binary = Integer.toBinaryString(decimalNumber);
+        System.out.println("Binary equivalent of " + decimalNumber + " is " + binary);
+    }
+}
+
+7. Write a Java program to check whether a given number is Armstrong Number or not. 
+import java.util.Scanner;
+
+public class ArmstrongNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        scanner.close();
+        int originalNumber = number;
+        int digits = 0;
+        while (number > 0) {
+            digits++;
+            number /= 10;
+        }
+        int sum = 0;
+        number = originalNumber;
+        while (number > 0) {
+            int remainder = number % 10;
+            sum += Math.pow(remainder, digits);
+            number /= 10;
+        }
+        if (sum == originalNumber) {
+            System.out.println(originalNumber + " is an Armstrong number.");
+        } else {
+            System.out.println(originalNumber + " is not an Armstrong number.");
+        }
+    }
+}
+
+
+8. Write a Java program to calculate the sum of natural numbers up to a certain range 
+import java.util.Scanner;
+
+public class SumOfNaturalNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the range: ");
+        int n = input.nextInt();
+        
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+        
+        System.out.println("The sum of natural numbers up to " + n + " is " + sum);
+    }
+}
+
+
+9. Write java codes to implement the followings –
+Basic string handling concepts- Concept of mutable and immutable string, Methods of String
+class-charAt(), compareTo(), equals(), equalsIgnoreCase(), indexOf(), length() , substring().;
+toCharArray(), toLowerCase(), toString(), toUpperCase() , trim() , valueOf() methods,
+public class StringHandlingDemo {
+    public static void main(String[] args) {
+        // Creating a string object
+        String str1 = "Hello";
+        System.out.println("Original string: " + str1);
+
+        // Demonstrating the immutable nature of string
+        str1 = str1.concat(" World");
+        System.out.println("Concatenated string: " + str1);
+
+        // Demonstrating various string methods
+        System.out.println("Character at index 2: " + str1.charAt(2));
+        System.out.println("Comparison with 'Hello': " + str1.compareTo("Hello"));
+        System.out.println("Equals to 'hello world': " + str1.equals("hello world"));
+        System.out.println("Equals ignore case to 'hello world': " + str1.equalsIgnoreCase("hello world"));
+        System.out.println("Index of 'o': " + str1.indexOf('o'));
+        System.out.println("Length of the string: " + str1.length());
+        System.out.println("Substring from index 3: " + str1.substring(3));
+
+        // Demonstrating conversion methods
+        char[] charArray = str1.toCharArray();
+        System.out.println("Converted to character array: " + charArray);
+        System.out.println("Lowercase string: " + str1.toLowerCase());
+        System.out.println("Uppercase string: " + str1.toUpperCase());
+        System.out.println("Trimmed string: " + str1.trim());
+        System.out.println("Converted integer value: " + Integer.valueOf(str1));
+
+    }
+}
+
+
+10. Write java codes to implement the followings –
+Methods of Stringbuffer class: append(), capacity(), charAt(), delete(), deleteCharAt().;
+ensureCapacity(), getChars(), indexOf(), insert(), length(), setCharAt(), setLength(), substring(),
+toString().
+public class StringAndStringBufferDemo {
+    public static void main(String[] args) {
+        // String methods
+        String str1 = "Hello";
+        String str2 = "World";
+        String str3 = str1.concat(str2);
+        System.out.println("str1: " + str1);
+        System.out.println("str2: " + str2);
+        System.out.println("str3: " + str3);
+        System.out.println("str1.charAt(1): " + str1.charAt(1));
+        System.out.println("str1.compareTo(str2): " + str1.compareTo(str2));
+        System.out.println("str1.equals(str2): " + str1.equals(str2));
+        System.out.println("str1.equalsIgnoreCase(\"hello\"): " + str1.equalsIgnoreCase("hello"));
+        System.out.println("str1.indexOf('e'): " + str1.indexOf('e'));
+        System.out.println("str1.length(): " + str1.length());
+        System.out.println("str1.substring(1, 3): " + str1.substring(1, 3));
+        System.out.println("str1.toLowerCase(): " + str1.toLowerCase());
+        System.out.println("str1.toUpperCase(): " + str1.toUpperCase());
+        System.out.println("str1.trim(): " + str1.trim());
+        System.out.println("String.valueOf(123): " + String.valueOf(123));
+        
+        // StringBuffer methods
+        StringBuffer sb1 = new StringBuffer("Hello");
+        StringBuffer sb2 = new StringBuffer("World");
+        sb1.append(sb2);
+        System.out.println("sb1: " + sb1);
+        System.out.println("sb1.capacity(): " + sb1.capacity());
+        System.out.println("sb1.charAt(1): " + sb1.charAt(1));
+        sb1.delete(1, 3);
+        System.out.println("sb1.delete(1, 3): " + sb1);
+        sb1.deleteCharAt(1);
+        System.out.println("sb1.deleteCharAt(1): " + sb1);
+        sb1.ensureCapacity(50);
+        System.out.println("sb1.ensureCapacity(50): " + sb1.capacity());
+        char[] arr = new char[5];
+        sb1.getChars(0, 5, arr, 0);
+        System.out.println("sb1.getChars(0, 5, arr, 0): " + String.valueOf(arr));
+        System.out.println("sb1.indexOf(\"llo\"): " + sb1.indexOf("llo"));
+        sb1.insert(1, "i");
+        System.out.println("sb1.insert(1, \"i\"): " + sb1);
+        System.out.println("sb1.length(): " + sb1.length());
+        sb1.setCharAt(2, 'o');
+        System.out.println("sb1.setCharAt(2, 'o'): " + sb1);
+        sb1.setLength(5);
+        System.out.println("sb1.setLength(5): " + sb1);
+        System.out.println("sb1.substring(1, 3): " + sb1.substring(1, 3));
+        System.out.println("sb1.toString(): " + sb1.toString());
+    }
+}
+                               Assignment No 4 
+1. Implementation of method overloading with respect to parameter number, parameter
+data type.
+public class Example {
+  
+  // Method overloading with respect to parameter number
+  public void add(int a, int b) {
+    int result = a + b;
+    System.out.println("Result: " + result);
+  }
+  
+  public void add(int a, int b, int c) {
+    int result = a + b + c;
+    System.out.println("Result: " + result);
+  }
+  
+  // Method overloading with respect to parameter data type
+  public void add(double a, double b) {
+    double result = a + b;
+    System.out.println("Result: " + result);
+  }
+  
+  public void add(String a, String b) {
+    String result = a + b;
+    System.out.println("Result: " + result);
+  }
+  
+  public static void main(String[] args) {
+    Example obj = new Example();
+    obj.add(5, 10); // calling add(int, int) method
+    obj.add(5, 10, 15); // calling add(int, int, int) method
+    obj.add(2.5, 3.5); // calling add(double, double) method
+    obj.add("Hello", "World"); // calling add(String, String) method
+  }
+}
+
+
+2. Write a java program to implement of constructor overloading.
+public class MyClass {
+    private int x;
+    private int y;
+    private String name;
+
+    // Default constructor
+    public MyClass() {
+        x = 0;
+        y = 0;
+        name = "Default";
+    }
+
+    // Constructor with two integer parameters
+    public MyClass(int x, int y) {
+        this.x = x;
+        this.y = y;
+        name = "Integer parameters";
+    }
+
+    // Constructor with a String parameter
+    public MyClass(String name) {
+        x = 0;
+        y = 0;
+        this.name = name;
+    }
+
+    // Constructor with all three parameters
+    public MyClass(int x, int y, String name) {
+        this.x = x;
+        this.y = y;
+        this.name = name;
+    }
+
+    // Getter and setter methods
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+
+3. Implementation of this keyword to invoke current class method.
+class A{  
+void m(){System.out.println("hello m");}  
+void n(){  
+System.out.println("hello n");  
+//m();//same as this.m()  
+this.m();  
+}  
+}  
+class TestThis4{  
+public static void main(String args[]){  
+A a=new A();  
+a.n();  
+}}  
+
+
+4. Implementation of this keyword to invoke current class constructor.
+class A{  
+A(){System.out.println("hello a");}  
+A(int x){  
+this();  
+System.out.println(x);  
+}  
+}  
+class TestThis5{  
+public static void main(String args[]){  
+A a=new A(10);  
+}}  
+
+
+5. Implementation of this keyword to pass as an argument in the method.
+class S2{  
+  void m(S2 obj){  
+  System.out.println("method is invoked");  
+  }  
+  void p(){  
+  m(this);  
+  }  
+  public static void main(String args[]){  
+  S2 s1 = new S2();  
+  s1.p();  
+  }  
+}  
+
+6. Implementation of this keyword to pass as argument in the constructor call.
+class B{  
+  A4 obj;  
+  B(A4 obj){  
+    this.obj=obj;  
+  }  
+  void display(){  
+    System.out.println(obj.data);//using data member of A4 class  
+  }  
+}  
+  
+class A4{  
+  int data=10;  
+  A4(){  
+   B b=new B(this);  
+   b.display();  
+  }  
+  public static void main(String args[]){  
+   A4 a=new A4();  
+  }  
+}  
+
+7. Implement - this keyword can be used to return current class instance.
+class A{  
+A getA(){  
+return this;  
+}  
+void msg(){System.out.println("Hello java");}  
+}  
+class Test1{  
+public static void main(String args[]){  
+new A().getA().msg();  
+}  
+}  
+
+8. Prove that this keyword refers to the current class instance variable.
+class A5{  
+void m(){  
+System.out.println(this);//prints same reference ID  
+}  
+public static void main(String args[]){  
+A5 obj=new A5();  
+System.out.println(obj);//prints the reference ID  
+obj.m();  
+}  
+}  
+
+9. Implementation of this keyword as local variable suppressor.
+public class MyClass {
+    private int myVar;
+
+    public void setMyVar(int myVar) {
+        this.myVar = myVar; 
+    }
+
+    public int getMyVar() {
+        return myVar; 
+    }
+
+    public void doSomething(int myVar) {
+        
+        this.myVar = myVar; 
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.setMyVar(5);
+        System.out.println("Instance variable value: " + obj.getMyVar());
+        obj.doSomething(10);
+        System.out.println("Instance variable value after calling doSomething: " + obj.getMyVar());
+    }
+}
+
+
+10. Create a general class ThreeDObject and derive the classes Box, Cube, Cylinder
+and Cone from it. The class ThreeDObject has methods wholeSurfaceArea ( ) and volume ( ). Override these two methods in each of the derived classes to calculate the volume and whole surface area of each type of three-dimensional objects. The dimensions of the objects are to be taken from the users and passed through the
+respective constructors of each derived class. Write a main method to test these
+classes.
+import java.util.Scanner;
+
+public class ThreeDObject {
+    protected double length;
+    protected double breadth;
+    protected double height;
+
+    public ThreeDObject(double length, double breadth, double height) {
+        this.length = length;
+        this.breadth = breadth;
+        this.height = height;
+    }
+
+    public double wholeSurfaceArea() {
+        return 0.0;
+    }
+
+    public double volume() {
+        return 0.0;
+    }
+}
+
+class Box extends ThreeDObject {
+    public Box(double length, double breadth, double height) {
+        super(length, breadth, height);
+    }
+
+    @Override
+    public double wholeSurfaceArea() {
+        return 2 * (length * breadth + breadth * height + height * length);
+    }
+
+    @Override
+    public double volume() {
+        return length * breadth * height;
+    }
+}
+
+class Cube extends ThreeDObject {
+    public Cube(double length) {
+        super(length, length, length);
+    }
+
+    @Override
+    public double wholeSurfaceArea() {
+        return 6 * length * length;
+    }
+
+    @Override
+    public double volume() {
+        return length * length * length;
+    }
+}
+
+class Cylinder extends ThreeDObject {
+    public Cylinder(double height, double radius) {
+        super(radius, radius, height);
+    }
+
+    @Override
+    public double wholeSurfaceArea() {
+        return 2 * Math.PI * breadth * (height + breadth);
+    }
+
+    @Override
+    public double volume() {
+        return Math.PI * breadth * breadth * height;
+    }
+}
+
+class Cone extends ThreeDObject {
+    public Cone(double height, double radius) {
+        super(radius, radius, height);
+    }
+
+    @Override
+    public double wholeSurfaceArea() {
+        double slantHeight = Math.sqrt(height * height + breadth * breadth);
+        return Math.PI * breadth * (breadth + slantHeight);
+    }
+
+    @Override
+    public double volume() {
+        return (1.0/3.0) * Math.PI * breadth * breadth * height;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter length, breadth, and height of a Box:");
+        double length = sc.nextDouble();
+        double breadth = sc.nextDouble();
+        double height = sc.nextDouble();
+        Box box = new Box(length, breadth, height);
+
+        System.out.println("Enter length of a Cube:");
+        length = sc.nextDouble();
+        Cube cube = new Cube(length);
+
+        System.out.println("Enter height and radius of a Cylinder:");
+        height = sc.nextDouble();
+        double radius = sc.nextDouble();
+        Cylinder cylinder = new Cylinder(height, radius);
+
+        System.out.println("Enter height and radius of a Cone:");
+        height = sc.nextDouble();
+        radius = sc.nextDouble();
+        Cone cone = new Cone(height, radius);
+
+        System.out.println("Box volume: " + box.volume() + ", whole surface area: " + box.wholeSurfaceArea());
+        System.out.println("Cube volume: " + cube.volume() + ", whole surface area: " + cube.wholeSurfaceArea());
+        System.out.println("Cylinder volume: " + cylinder.volume() + ", whole surface area: " + cylinder.wholeSurfaceArea());
+        System.out.println("Cone volume: " + cone.volume() + ", whole surface area: " + cone.wholeSurfaceArea());
+
+        sc.close();
+    }
+}
+
+
+                                                    Assignment No 5 
+1. Write a java program to implement the static keyword in java.
+class Student{  
+   int rollno;
+   String name;  
+   static String college ="ITS";
+   Student(int r, String n){  
+   rollno = r;  
+   name = n;  
+   }  
+   
+   void display (){System.out.println(rollno+" "+name+" "+college);}  
+}  
+ 
+public class TestStaticVariable1{  
+ public static void main(String args[]){  
+ Student s1 = new Student(111,"Karan");  
+ Student s2 = new Student(222,"Aryan");  
+ 
+ s1.display();  
+ s2.display();  
+ }  
+}  
+
+2. Write a java program to implement the static method in java.
+class Calculate{  
+  static int cube(int x){  
+  return x*x*x;  
+  }  
+  
+  public static void main(String args[]){  
+  int result=Calculate.cube(5);  
+  System.out.println(result);  
+  }  
+}  
+
+3. Write a java program to implement the single inheritance in java.
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class TestInheritance{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.bark();  
+d.eat();  
+}} 
+
+4. Write a java program to implement the hierarchical inheritance in java.
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class Cat extends Animal{  
+void meow(){System.out.println("meowing...");}  
+}  
+class TestInheritance3{  
+public static void main(String args[]){  
+Cat c=new Cat();  
+c.meow();  
+c.eat();  
+}} 
+
+5. Write a java program to implement the multilevel inheritance in java.
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class BabyDog extends Dog{  
+void weep(){System.out.println("weeping...");}  
+}  
+class TestInheritance2{  
+public static void main(String args[]){  
+BabyDog d=new BabyDog();  
+d.weep();  
+d.bark();  
+d.eat();  
+}}  
+
+6. Multiple inheritance does not support in java – justify.
+class A{  
+void msg(){System.out.println("Hello");}  
+}  
+class B{  
+void msg(){System.out.println("Welcome");}  
+}  
+class C extends A,B{ 
+   
+ public static void main(String args[]){  
+   C obj=new C();  
+   obj.msg();  
+}  
+}  
+
+7. Implementation of method overriding in java.
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class BabyDog extends Dog{  
+void weep(){System.out.println("weeping...");}  
+}  
+class TestInheritance2{  
+public static void main(String args[]){  
+BabyDog d=new BabyDog();  
+d.weep();  
+d.bark();  
+d.eat();  
+}} 
+
+8. Implementation of dynamic method dispatch in java.
+class Base {
+   public void show() {
+      System.out.println("Base class show() method");
+   }
+   public static void test() {
+      System.out.println("Base class test() method");
+   }
+}
+class Derived extends Base {
+   public void show() {
+      System.out.println("Derived class show() method");
+   }
+      
+   public static void test() {
+      System.out.println("Derived class test() method");
+   }
+}
+public class Test {
+   public static void main(String[] args) {
+      Base ref = new Derived();
+      
+      ref.test();
+      
+      ref.show();
+   }
+}
+
+9. Write a java program to stop method overriding.
+class Shape {
+    public void draw() {
+        System.out.println("Drawing a shape...");
+    }
+}
+
+class Circle extends Shape {
+    public void draw() {
+        System.out.println("Drawing a circle...");
+    }
+}
+
+class Square extends Shape {
+    public void draw() {
+        System.out.println("Drawing a square...");
+    }
+}
+
+public class DynamicDispatchExample {
+    public static void main(String[] args) {
+        Shape shape1 = new Circle();
+        Shape shape2 = new Square();
+        
+       
+        shape1.draw();
+        
+        
+        shape2.draw();
+    }
+}
+
+
+10. Create a “circle” class & a “point” class. The coordinates of the circle are given and used within the “circle” class as object of the “point” class. Display the area of circle 11. Write a program to define a class Employee to accept emp_id, emp _name,
+basic_salary from the user and display the gross_salary.
+import java.util.Scanner;
+
+class Employee {
+    private int empId;
+    private String empName;
+    private double basicSalary;
+
+    public Employee(int empId, String empName, double basicSalary) {
+        this.empId = empId;
+        this.empName = empName;
+        this.basicSalary = basicSalary;
+    }
+
+    public double getGrossSalary() {
+        double hra = 0.1 * basicSalary;
+        double da = 0.5 * basicSalary;
+        double grossSalary = basicSalary + hra + da;
+
+        return grossSalary;
+    }
+}
+
+public class EmployeeExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter employee ID: ");
+        int empId = scanner.nextInt();
+
+        System.out.print("Enter employee name: ");
+        String empName = scanner.next();
+
+        System.out.print("Enter basic salary: ");
+        double basicSalary = scanner.nextDouble();
+
+        Employee employee = new Employee(empId, empName, basicSalary);
+
+        System.out.println("Gross salary: " + employee.getGrossSalary());
+
+        scanner.close();
+    }
+}
+
+
+12. Write a program to define a class Fraction having data members numerator and denominator. Initialize three objects using different constructors and display its fractional value.
+class Fraction {
+    private int numerator;
+    private int denominator;
+
+    public Fraction(int numerator, int denominator) {
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    public Fraction(int numerator) {
+        this.numerator = numerator;
+        this.denominator = 1;
+    }
+
+    public Fraction() {
+        this.numerator = 0;
+        this.denominator = 1;
+    }
+
+    public double getFractionValue() {
+        return (double) numerator / denominator;
+    }
+}
+
+public class FractionExample {
+    public static void main(String[] args) {
+        Fraction f1 = new Fraction(3, 4);
+        Fraction f2 = new Fraction(5);
+        Fraction f3 = new Fraction();
+
+        System.out.println("Fraction value of f1: " + f1.getFractionValue());
+        System.out.println("Fraction value of f2: " + f2.getFractionValue());
+        System.out.println("Fraction value of f3: " + f3.getFractionValue());
+    }
+}
+
+
+13. Write a program to define a class Item containing code and price. Accept this data for five objects using array of objects. Display code, price in tabular form and also, display total price of all items. 
+class Item {
+    private String code;
+    private double price;
+
+    public Item(String code, double price) {
+        this.code = code;
+        this.price = price;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+}
+
+public class ItemExample {
+    public static void main(String[] args) {
+        Item[] items = new Item[5];
+
+        items[0] = new Item("A001", 10.0);
+        items[1] = new Item("B002", 20.0);
+        items[2] = new Item("C003", 30.0);
+        items[3] = new Item("D004", 40.0);
+        items[4] = new Item("E005", 50.0);
+
+        System.out.println("Code\tPrice");
+
+        double totalPrice = 0.0;
+        for (int i = 0; i < items.length; i++) {
+            System.out.println(items[i].getCode() + "\t" + items[i].getPrice());
+            totalPrice += items[i].getPrice();
+        }
+
+        System.out.println("\nTotal price of all items: " + totalPrice);
+    }
+}
+
+
+                                                       Assignment No 6 
+1. Write a java program to implement the abstraction property.
+abstract class Shape {
+    protected double area;
+
+    public abstract void calculateArea();
+    public double getArea() {
+        return area;
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public void calculateArea() {
+        area = Math.PI * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    public void calculateArea() {
+        area = length * width;
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Shape circle = new Circle(5.0);
+        circle.calculateArea();
+        System.out.println("Area of circle with radius 5.0: " + circle.getArea());
+
+        Shape rectangle = new Rectangle(10.0, 5.0);
+        rectangle.calculateArea();
+        System.out.println("Area of rectangle with length 10.0 and width 5.0: " + rectangle.getArea());
+    }
+}
+
+
+2. Write a java program to implement interface.
+
+
+3. Write a java program to implement multi level inheritance with the help of interface.
+interface Shape {
+    public void calculateArea();
+    public double getArea();
+}
+
+class Circle implements Shape {
+    private double radius;
+    private double area;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public void calculateArea() {
+        area = Math.PI * radius * radius;
+    }
+
+    public double getArea() {
+        return area;
+    }
+}
+
+class Rectangle implements Shape {
+    private double length;
+    private double width;
+    private double area;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    public void calculateArea() {
+        area = length * width;
+    }
+
+    public double getArea() {
+        return area;
+    }
+}
+
+public class InterfaceExample {
+    public static void main(String[] args) {
+        Shape circle = new Circle(5.0);
+        circle.calculateArea();
+        System.out.println("Area of circle with radius 5.0: " + circle.getArea());
+
+        Shape rectangle = new Rectangle(10.0, 5.0);
+        rectangle.calculateArea();
+        System.out.println("Area of rectangle with length 10.0 and width 5.0: " + rectangle.getArea());
+    }
+}
+
+
+4. Write a java program to implement the inheritance in interface.
+interface Shape {
+    public void calculateArea();
+    public double getArea();
+}
+
+interface TwoDimensionalShape extends Shape {
+    public void calculatePerimeter();
+    public double getPerimeter();
+}
+
+interface ThreeDimensionalShape extends Shape {
+    public void calculateVolume();
+    public double getVolume();
+}
+
+class Circle implements TwoDimensionalShape {
+    private double radius;
+    private double area;
+    private double perimeter;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public void calculateArea() {
+        area = Math.PI * radius * radius;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public void calculatePerimeter() {
+        perimeter = 2 * Math.PI * radius;
+    }
+
+    public double getPerimeter() {
+        return perimeter;
+    }
+}
+
+class Sphere implements ThreeDimensionalShape {
+    private double radius;
+    private double area;
+    private double volume;
+
+    public Sphere(double radius) {
+        this.radius = radius;
+    }
+
+    public void calculateArea() {
+        area = 4 * Math.PI * radius * radius;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public void calculateVolume() {
+        volume = (4.0/3.0) * Math.PI * radius * radius * radius;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+}
+
+public class InterfaceInheritanceExample {
+    public static void main(String[] args) {
+        TwoDimensionalShape circle = new Circle(5.0);
+        circle.calculateArea();
+        circle.calculatePerimeter();
+        System.out.println("Area of circle with radius 5.0: " + circle.getArea());
+        System.out.println("Perimeter of circle with radius 5.0: " + circle.getPerimeter());
+
+        ThreeDimensionalShape sphere = new Sphere(3.0);
+        sphere.calculateArea();
+        sphere.calculateVolume();
+        System.out.println("Area of sphere with radius 3.0: " + sphere.getArea());
+        System.out.println("Volume of sphere with radius 3.0: " + sphere.getVolume());
+    }
+}
+
+
+5. Write a java program to implement multiple inheritance using interface.
+interface A {
+    void methodA();
+}
+
+interface B {
+    void methodB();
+}
+
+interface C extends A, B {
+    void methodC();
+}
+
+class MyClass implements C {
+    public void methodA() {
+        System.out.println("Method A");
+    }
+    
+    public void methodB() {
+        System.out.println("Method B");
+    }
+    
+    public void methodC() {
+        System.out.println("Method C");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.methodA();
+        obj.methodB();
+        obj.methodC();
+    }
+}
+
+
+6. Write a java program to implement super keyword in java.
+class Animal{  
+String color="white";  
+}  
+class Dog extends Animal{  
+String color="black";  
+void printColor(){  
+System.out.println(color);//prints color of Dog class  
+System.out.println(super.color);//prints color of Animal class  
+}  
+}  
+class TestSuper1{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.printColor();  
+}}  
+
+7. Write a java program to implement super() method without parameter.
+class Animal {
+    String name;
+
+    public Animal() {
+        this.name = "unknown";
+        System.out.println("Animal class constructor is called");
+    }
+
+    public void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+}
+
+class Dog extends Animal {
+    public Dog() {
+        super();
+        System.out.println("Dog class constructor is called");
+    }
+
+    public void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.sleep();
+        myDog.bark();
+    }
+}
+
+
+8. Write a java program to implement super() method with parameter.
+class Animal {
+    String name;
+
+    public Animal(String name) {
+        this.name = name;
+        System.out.println("Animal class constructor is called with name: " + this.name);
+    }
+
+    public void sleep() {
+        System.out.println(this.name + " is sleeping");
+    }
+}
+
+class Dog extends Animal {
+    int age;
+
+    public Dog(String name, int age) {
+        super(name);
+        this.age = age;
+        System.out.println("Dog class constructor is called with age: " + this.age);
+    }
+
+    public void bark() {
+        System.out.println(this.name + " is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog("Fido", 3);
+        myDog.sleep();
+        myDog.bark();
+    }
+}
+
+
+9. Create an interface called Player. The interface has an abstract method called play() that displays a
+message describing the meaning of “play” to the class. Create classes called Child, Musician, and
+Actor that all implement Player. Create an application that demonstrates the use of the
+classes(UsePlayer.java
+interface Player {
+    void play();
+}
+
+class Child implements Player {
+    @Override
+    public void play() {
+        System.out.println("Playing with toys");
+    }
+}
+
+class Musician implements Player {
+    @Override
+    public void play() {
+        System.out.println("Playing music");
+    }
+}
+
+class Actor implements Player {
+    @Override
+    public void play() {
+        System.out.println("Playing a character in a play/movie");
+    }
+}
+
+public class UsePlayer {
+    public static void main(String[] args) {
+        Player[] players = new Player[3];
+        players[0] = new Child();
+        players[1] = new Musician();
+        players[2] = new Actor();
+
+        for (Player player : players) {
+            player.play();
+        }
+    }
+}
+
+
+10. Create an abstract class Accounts with the following details:
+Data Members: Balance (b) accountNumber (c) accountHoldersName (d) address
+Methods: withdrawl()- abstract , (b) deposit()- abstract , (c) display() to show the balance
+of the account number
+Create a subclass of this class SavingsAccount and add the following details:
+Data Members: (a) rateOfInterest
+Methods: (a) calculateAount() 
+abstract class Accounts {
+    double balance;
+    int accountNumber;
+    String accountHoldersName;
+    String address;
+
+    public abstract void withdrawal(double amount);
+    public abstract void deposit(double amount);
+
+    public void display() {
+        System.out.println("Account number: " + accountNumber);
+        System.out.println("Balance: " + balance);
+    }
+}
+
+class SavingsAccount extends Accounts {
+    double rateOfInterest;
+
+    public void calculateAmount() {
+        // Calculate the amount based on the balance and interest rate
+        double amount = balance + (balance * rateOfInterest);
+        System.out.println("Amount: " + amount);
+    }
+
+    @Override
+    public void withdrawal(double amount) {
+        // Perform withdrawal from the balance
+        balance -= amount;
+    }
+
+    @Override
+    public void deposit(double amount) {
+        // Perform deposit to the balance
+        balance += amount;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SavingsAccount savingsAccount = new SavingsAccount();
+        savingsAccount.accountNumber = 12345;
+        savingsAccount.accountHoldersName = "John Doe";
+        savingsAccount.address = "123 Main Street";
+        savingsAccount.balance = 1000;
+        savingsAccount.rateOfInterest = 0.05;
+
+        savingsAccount.display();
+        savingsAccount.calculateAmount();
+
+        savingsAccount.withdrawal(500);
+        savingsAccount.display();
+
+        savingsAccount.deposit(1000);
+        savingsAccount.display();
+    }
+}
+
+
+                                                    Assignment No 7 
+1. Implementation of final keyword before a variable.
+public class Example {
+  public static void main(String[] args) {
+    final int MAX_VALUE = 100;
+    System.out.println("The maximum value is: " + MAX_VALUE);
+  }
+}
+
+
+2. Implementation of final keyword before a method.
+public class Parent {
+  public final void printMessage() {
+    System.out.println("This is a final method.");
+  }
+}
+
+public class Child extends Parent {
+  // cannot override printMessage() method
+}
+
+
+3. Implementation of final keyword before a class.
+public final class Parent {
+  // implementation
+}
+
+public class Child extends Parent {  // error: cannot extend final class
+  // implementation
+}
+
+
+4. Write a java program to create package.
+package myPackage;
+
+public class MyClass {
+    public void myMethod() {
+        System.out.println("This is my package.");
+    }
+}
+import myPackage.MyClass;
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.myMethod();
+    }
+}
+
+
+5. Write a java program to create a subpackage.
+package com.example.models;
+
+public class Person {
+   private String name;
+   private int age;
+
+   public Person(String name, int age) {
+       this.name = name;
+       this.age = age;
+   }
+
+   public String getName() {
+       return name;
+   }
+
+   public int getAge() {
+       return age;
+   }
+}
+
+
+6. Write a java program to access the methods from package.
+
+package mypackage;
+
+public class MyClass {
+    public void myMethod() {
+        System.out.println("This is my method.");
+    }
+}
+
+
+import mypackage.MyClass;
+
+public class MainClass {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.myMethod();
+    }
+}
+
+
+7. Write a java program to access the methods from package & subpackage both.
+import mypackage.*;
+import mypackage.mysubpackage.*;
+
+public class Main {
+   public static void main(String[] args) {
+      // Accessing methods from mypackage
+      MyClass myClassObj = new MyClass();
+      myClassObj.method1();
+      
+      // Accessing methods from mypackage.mysubpackage
+      MySubClass mySubClassObj = new MySubClass();
+      mySubClassObj.method2();
+   }
+}
+
+
+8. Write a java program to observe the utility of public access specifier. 
+
+
+package com.example;
+
+public class MyClass {
+    public int publicVar = 10;
+
+    public void publicMethod() {
+        System.out.println("This is a public method");
+    }
+}
+
+
+package com.example;
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        System.out.println("Public variable: " + obj.publicVar);
+        obj.publicMethod();
+    }
+}
+
+
+                                                         Assignment No 8
+1. Exception CASE-1: Problem without exception handling
+public class Division {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 0;
+        int result = a / b;
+        System.out.println(result);
+    }
+}
+
+
+2. Exception CASE-2: Exception creates but properly handled
+public class Division {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 0;
+        try {
+            int result = a / b;
+            System.out.println(result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+
+
+3. Exception CASE-3: Exception creates but not handled
+import java.util.Scanner;
+
+public class ExceptionCase3 {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int a, b, c;
+      
+      System.out.println("Enter two numbers to divide: ");
+      a = sc.nextInt();
+      b = sc.nextInt();
+      
+      // possible arithmetic exception created
+      c = a / b;
+      
+      // This line of code will not execute in case an exception occurs above
+      System.out.println("Result: " + c);
+      
+      System.out.println("End of program");
+   }
+}
+
+
+4. Write a java program to implement Java Multi catch block
+public class MultiCatchExample {
+   public static void main(String[] args) {
+      try {
+         int[] arr = new int[5];
+         arr[10] = 50/0;
+      } catch (ArrayIndexOutOfBoundsException | ArithmeticException e) {
+         System.out.println("Exception occurred: " + e);
+      }
+   }
+}
+
+
+5. Write a java program to implement Java Nested try statement
+public class NestedTryExample {
+    public static void main(String[] args) {
+        int[] arr = { 10, 20, 30, 40 };
+        int[] div = { 2, 0, 4 };
+
+        try {
+            for (int i = 0; i < div.length; i++) {
+                try {
+                    int result = arr[i] / div[i];
+                    System.out.println("Result: " + result);
+                } catch (ArithmeticException e) {
+                    System.out.println("Cannot divide by zero!");
+                }
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Index out of bounds!");
+        }
+    }
+}
+
+
+6. Write a java program to implement the throw keyword.
+public class AgeValidation {
+
+    public static void main(String[] args) {
+        
+        try {
+            validateAge(15);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public static void validateAge(int age) {
+        if (age < 18) {
+            throw new IllegalArgumentException("Age must be greater than or equal to 18.");
+        } else {
+            System.out.println("Valid age.");
+        }
+    }
+}
+
+
+7. Write a java program to implement the throws keyword.
+import java.io.*;
+
+class ThrowsExample {
+
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    System.out.print("Enter a number: ");
+    String str = br.readLine();
+    int num = Integer.parseInt(str);
+    System.out.println("Entered number is: " + num);
+  }
+
+}
+
+
+8. Finally CASE – 1 : Case 1: finally example where exception doesn't occur.
+
+
+ Case 2: finally example where exception occurs and not handled.
+
+
+ Case 3: finally example where exception occurs and handled.
+case1:
+public class FinallyExample {
+    public static void main(String[] args) {
+        try {
+            int num = 100/2;
+            System.out.println(num);
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+        finally {
+            System.out.println("finally block is executed");
+        }
+    }
+}
+case2:
+public class FinallyExample {
+    public static void main(String[] args) {
+        try {
+            int num = 100/0;
+            System.out.println(num);
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+        finally {
+            System.out.println("finally block is executed");
+        }
+    }
+}
+
+case3:
+public class FinallyExample {
+    public static void main(String[] args) {
+        try {
+            int num = 100/0;
+            System.out.println(num);
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+        finally {
+            System.out.println("finally block is executed");
+            System.out.println("Exception was handled in catch block");
+        }
+    }
+}
+
+
+9. Create a user-defined exception named CheckArgument to check the number of
+arguments passed through the command line. If the number of argument is less than 5,
+throw the CheckArgumentexception,else print the addition of all the five numbers.
+class CheckArgumentException extends Exception {
+    public CheckArgumentException(String message) {
+        super(message);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            if (args.length < 5) {
+                throw new CheckArgumentException("Number of arguments should be at least 5.");
+            } else {
+                int sum = 0;
+                for (int i = 0; i < args.length; i++) {
+                    sum += Integer.parseInt(args[i]);
+                }
+                System.out.println("Sum of all arguments: " + sum);
+            }
+        } catch (CheckArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+
+10. Consider a Student examination database system that prints the mark sheet of students.
+Input the following from the command line.
+(a) Student’s Name
+(b) Marks in six subjects
+These marks should be between 0 to 50. If the marks are not in the specified range, raise
+a RangeException, else find the total marks and prints the percentage of the students.  
+import java.util.Scanner;
+
+class RangeException extends Exception {
+    public RangeException(String message) {
+        super(message);
+    }
+}
+
+class Student {
+    String name;
+    int[] marks = new int[6];
+    double totalMarks = 0;
+
+    public Student(String name, int[] marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public void calculateTotalMarks() throws RangeException {
+        for (int i = 0; i < marks.length; i++) {
+            if (marks[i] < 0 || marks[i] > 50) {
+                throw new RangeException("Marks should be between 0 to 50!");
+            }
+            totalMarks += marks[i];
+        }
+    }
+
+    public void printResult() {
+        double percentage = (totalMarks / 300) * 100;
+        System.out.println("Name: " + name);
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Percentage: " + percentage);
+    }
+}
+
+public class MarkSheet {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            String name = args[0];
+            int[] marks = new int[6];
+            for (int i = 1; i <= 6; i++) {
+                System.out.print("Enter marks in subject " + i + ": ");
+                marks[i-1] = sc.nextInt();
+            }
+            Student s = new Student(name, marks);
+            s.calculateTotalMarks();
+            s.printResult();
+        } catch (RangeException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Invalid input!");
+        }
+    }
+}
+
+                                                         
+                                                        Assignment No 9
+1. Write a java program to create Thread by extending the Thread class.
+public class MyThread extends Thread {
+    
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+    
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();
+    }
+}
+
+
+2. Write a java program to create Thread by implementing the Runnable interface.
+public class MyThread implements Runnable {
+    
+   
+    public void run() {
+        System.out.println("Thread is running");
+    }
+    
+    public static void main(String[] args) {
+        
+       
+        MyThread myThread = new MyThread();
+        
+
+        Thread thread = new Thread(myThread);
+        
+        
+        thread.start();
+    }
+}
+
+
+3. Write a java program to implement the yield( ) method in thread programming.
+public class YieldExample implements Runnable {
+    
+    public void run() {
+        for(int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getName() + " is executing");
+            Thread.yield();
+        }
+    }
+    
+    public static void main(String[] args) {
+        YieldExample y1 = new YieldExample();
+        YieldExample y2 = new YieldExample();
+        
+        Thread t1 = new Thread(y1);
+        Thread t2 = new Thread(y2);
+        
+        t1.start();
+        t2.start();
+    }
+}
+
+
+4. Write a java program to implement the sleep(n) method in thread programming.
+public class SleepExample implements Runnable {
+   
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " is going to sleep.");
+        try {
+           
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + " has woken up.");
+    }
+    
+    public static void main(String[] args) {
+        SleepExample example = new SleepExample();
+        Thread t1 = new Thread(example);
+        Thread t2 = new Thread(example);
+        t1.setName("Thread 1");
+        t2.setName("Thread 2");
+        t1.start();
+        t2.start();
+    }
+}
+
+
+5. Write a java program to implement the suspend( ) & resume( ) method in thread
+programming.
+class MyThread implements Runnable {
+    private boolean suspended;
+    Thread t;
+    
+    MyThread() {
+        suspended = false;
+        t = new Thread(this, "My Thread");
+        t.start();
+    }
+    
+    public void run() {
+        try {
+            for(int i = 1; i <= 10; i++) {
+                System.out.println("Thread: " + t.getName() + " Count: " + i);
+                Thread.sleep(1000);
+                synchronized(this) {
+                    while(suspended) {
+                        wait();
+                    }
+                }
+            }
+        } catch(InterruptedException e) {
+            System.out.println("Thread Interrupted");
+        }
+        System.out.println("Thread Exiting: " + t.getName());
+    }
+    
+    void suspend() {
+        suspended = true;
+    }
+    
+    synchronized void resume() {
+        suspended = false;
+        notify();
+    }
+}
+
+public class SuspendResumeDemo {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        try {
+            Thread.sleep(5000);
+            t1.suspend();
+            System.out.println("Thread Suspended: " + t1.t.getName());
+            Thread.sleep(5000);
+            t1.resume();
+            System.out.println("Thread Resumed: " + t1.t.getName());
+        } catch(InterruptedException e) {
+            System.out.println("Main Thread Interrupted");
+        }
+        try {
+            t1.t.join();
+        } catch(InterruptedException e) {
+            System.out.println("Main Thread Interrupted");
+        }
+        System.out.println("Main Thread Exiting");
+    }
+}
+
+
+6. Write a java program to implement the sleep(n) method in thread programming.
+public class SleepExample implements Runnable {
+    
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " is going to sleep.");
+        try {
+            // sleep for 3 seconds
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + " has woken up.");
+    }
+    
+    public static void main(String[] args) {
+        SleepExample example = new SleepExample();
+        Thread t1 = new Thread(example);
+        Thread t2 = new Thread(example);
+        t1.setName("Thread 1");
+        t2.setName("Thread 2");
+        t1.start();
+        t2.start();
+    }
+}
+
+
+7. Create 4 threads with priority 1,3,5,7 respectively. Update a counter in each of the
+threads for 10 ms. Print the final value of count for each thread.
+class CounterThread extends Thread {
+    private int priority;
+    private int count;
+
+    public CounterThread(int priority) {
+        this.priority = priority;
+        this.count = 0;
+        setPriority(priority);
+    }
+
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            count++;
+        }
+        System.out.println("Thread with priority " + priority + " count is: " + count);
+    }
+}
+
+public class ThreadPriorityExample {
+    public static void main(String[] args) {
+        CounterThread t1 = new CounterThread(1);
+        CounterThread t2 = new CounterThread(3);
+        CounterThread t3 = new CounterThread(5);
+        CounterThread t4 = new CounterThread(7);
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+            t4.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+8. Write a Java Program to Synchronize the Threads Acting on the Same Object. The
+Synchronized Block in the Program can be Executed by Only One Thread at a Time.
+
+public class SynchronizedThreadExample {
+
+    public static void main(String[] args) {
+        Counter counter = new Counter(); 
+
+        
+        Thread t1 = new Thread(new CounterThread(counter));
+        Thread t2 = new Thread(new CounterThread(counter));
+        Thread t3 = new Thread(new CounterThread(counter));
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+
+    
+    private static class Counter {
+        private int count;
+
+        public synchronized void increment() {
+            count++;
+        }
+
+        // method to get the current count value
+        public int getCount() {
+            return count;
+        }
+    }
+
+    private static class CounterThread implements Runnable {
+        private Counter counter;
+
+        public CounterThread(Counter counter) {
+            this.counter = counter;
+        }
+
+        public void run() {
+           
+            for (int i = 0; i < 100; i++) {
+                counter.increment();
+                try {
+                    Thread.sleep(10); 
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.println(Thread.currentThread().getName() + " count = " + counter.getCount());
+        }
+    }
+}
+
+
+9. Write a Java Program to Check a Thread is Alive or Not.
+
+class MyThread extends Thread {
+    public void run() {
+        try {
+            System.out.println("Thread " + Thread.currentThread().getId() + " is running...");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            System.out.println("Thread " + Thread.currentThread().getId() + " was interrupted.");
+        }
+        System.out.println("Thread " + Thread.currentThread().getId() + " is finished.");
+    }
+}
+
+public class CheckThreadAlive {
+    public static void main(String[] args) throws Exception {
+        MyThread t1 = new MyThread();
+        MyThread t2 = new MyThread();
+
+        
+        t1.start();
+        t2.start();
+
+        
+        if (t1.isAlive()) {
+            System.out.println("Thread " + t1.getId() + " is alive.");
+        } else {
+            System.out.println("Thread " + t1.getId() + " is not alive.");
+        }
+
+        
+        if (t2.isAlive()) {
+            System.out.println("Thread " + t2.getId() + " is alive.");
+        } else {
+            System.out.println("Thread " + t2.getId() + " is not alive.");
+        }
+
+       
+        t1.join();
+        t2.join();
+
+        System.out.println("Main thread is finished.");
+    }
+}
+
+
+10. Write a Java Program to Get the Name of a Running Thread. 
+public class ThreadNameDemo {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> {
+            System.out.println("Thread name: " + Thread.currentThread().getName());
+        }, "MyThread");
+        
+        t1.start();
+        System.out.println("Main thread name: " + Thread.currentThread().getName());
+    }
+}
+
